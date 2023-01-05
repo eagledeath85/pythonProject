@@ -1,9 +1,4 @@
-import matplotlib
-import matplotlib.pyplot as plt
-from jedi.api.refactoring import inline
-
 from helper import *
-
 
 # 1. Import the data from Wikipedia
 data_url = "https://en.wikipedia.org/wiki/List_of_helicopter_prison_escapes"
@@ -26,8 +21,8 @@ for row in prison_break_data:
 # The pairs in the list should look like [year, nb_of_attempts]
 
 # 4.1 Getting the min_year and the max_year from prison_break_data
-min_year = min(prison_break_data, key= lambda x: x[0])[0]
-max_year = max(prison_break_data, key= lambda x: x[0])[0]
+min_year = min(prison_break_data, key=lambda x: x[0])[0]
+max_year = max(prison_break_data, key=lambda x: x[0])[0]
 
 # 4.2 Creating a list with all the years between min_year and max_year
 years = []
@@ -57,8 +52,6 @@ for row in prison_break_data:
     for country_attempt in attempts_per_country:
         if row[2] == country_attempt[0]:
             country_attempt[1] += 1
-
-
 
 # Displaying attempts_per_year and attempts_per_country with barplots
 barplot(attempts_per_year)
